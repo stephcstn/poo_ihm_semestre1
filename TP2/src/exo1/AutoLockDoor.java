@@ -1,0 +1,27 @@
+package exo1;
+
+public class AutoLockDoor extends Door{
+    public boolean isLocked;
+    private final boolean DEFAULT_LOCKED = false;
+
+    public AutoLockDoor() {
+        super();
+        this.isLocked = DEFAULT_LOCKED;
+    }
+
+    @Override
+    public void open() {
+        if (this.isLocked) {
+            System.out.println("Impossible d'ouvrir : la porte est verrouillee.");
+        } else {
+            super.open();
+        }
+    }
+
+    @Override
+    public void close() {
+        super.close();
+        this.isLocked = true;
+        System.out.println("la porte est maintenant verrouillee.");
+    }
+}
