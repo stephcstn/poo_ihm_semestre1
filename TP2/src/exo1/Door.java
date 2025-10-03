@@ -1,5 +1,8 @@
 package exo1;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Door {
 
     public boolean isOpen;
@@ -26,9 +29,17 @@ public class Door {
         } else {
             System.out.println("La porte est déjà fermée.");
         }
-        }
+    }
 
-}
-/*
+    @Override
     public String toString() {
-        return this.getClass().getSimpleName() + " [" + (isOpen ? "ouverte" : "fermée") + "]"; */
+        return this.getClass().getSimpleName() + " : " + (this.isOpen ? "ouverte" : "fermée");
+    }
+
+    public static void printDoorList(List<Door> door_list){
+        for (Door d : door_list) {
+            System.out.println(d.toString());
+        }
+    }
+}
+

@@ -9,6 +9,16 @@ public class AutoLockDoor extends Door{
         this.isLocked = DEFAULT_LOCKED;
     }
 
+    public AutoLockDoor(boolean locked){
+        super();
+        this.isLocked = locked;
+    }
+
+    public void unlock() {
+            this.isLocked = false;
+            System.out.println("Porte deverrouillee avec succès !");
+    }
+
     @Override
     public void open() {
         if (this.isLocked) {
