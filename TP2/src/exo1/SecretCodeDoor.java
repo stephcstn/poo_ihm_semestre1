@@ -14,6 +14,10 @@ public class SecretCodeDoor extends AutoLockDoor {
         this.secret_code = secretCode;
     }
 
+    public void unlock() {
+        System.out.println("Elle reste verouillee !");
+    }
+
     public void unlock(int code) {
         if (this.secret_code == code) {
             super.unlock();

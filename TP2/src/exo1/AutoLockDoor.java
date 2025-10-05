@@ -2,7 +2,7 @@ package exo1;
 
 public class AutoLockDoor extends Door{
     public boolean isLocked;
-    private final boolean DEFAULT_LOCKED = false;
+    private final boolean DEFAULT_LOCKED = true;
 
     public AutoLockDoor() {
         super();

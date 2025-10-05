@@ -36,8 +36,8 @@ public class Door {
         return this.getClass().getSimpleName() + " : " + (this.isOpen ? "ouverte" : "fermée");
     }
 
-    public static void printDoorList(List<Door> door_list){
-        for (Door d : door_list) {
+    public static void printDoorList(List<? extends Door> doors){
+        for (Door d : doors) {
             System.out.println(d.toString());
         }
     }
