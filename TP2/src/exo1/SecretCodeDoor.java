@@ -2,12 +2,6 @@ package exo1;
 
 public class SecretCodeDoor extends AutoLockDoor {
     public int secret_code;
-    private final int DEFAULT_CODE = 1234;
-
-    public SecretCodeDoor() {
-        super();
-        this.secret_code = DEFAULT_CODE;
-    }
 
     public SecretCodeDoor(int secretCode) {
         super();
