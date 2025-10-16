@@ -1,6 +1,7 @@
 package exo3;
 
 import java.util.List;
+import java.util.ArrayList;
 
 abstract public class Vehicle {
     private int loc;
@@ -47,14 +48,24 @@ abstract public class Vehicle {
 
     public void printType(){
         if (!this.is_Working){
-            System.out.println("”[*]”");
+            System.out.println("[*]");
         }
-        switch (getClass().getName()){
-            case "Car" : System.out.println("[C]");
-            case "Tank" : System.out.println("[T]");
-            case "Skateboard" : System.out.println("[S]");
+        switch (getClass().getSimpleName()){
+            case "Car" : System.out.println("[C]"); break;
+            case "Tank" : System.out.println("[T]"); break;
+            case "Skateboard" : System.out.println("[S]"); break;
         }
     }
+
+    public void displayTrajectory() {
+        ArrayList<String> tab_traj = new ArrayList<String>();
+        for (int i = 0; i < this.loc; i++) {
+            tab_traj.add("-");
+        }
+        System.out.println(tab_traj);
+        printType();
+    }
+
 
     public void goForward(){
         if (this.is_Working){
@@ -78,6 +89,6 @@ abstract public class Vehicle {
         this.speed = sp;
     }
 
-    public abstract void specialAction(List<Vehicle> players);
+    public abstract void specialAction();
 
 }

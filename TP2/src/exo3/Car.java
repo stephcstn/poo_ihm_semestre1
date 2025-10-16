@@ -1,11 +1,21 @@
 package exo3;
 
 public class Car extends Vehicle{
+    private static final int DEFAULT_SPEED_MAX = 8;
+
     public Car(){
-        super(8);
+        super(DEFAULT_SPEED_MAX);
     }
 
     @Override
-    public abstract void specialAction
+    public void accelerate(){
+        super.accelerate();
+        super.accelerate();
+    }
+
+    @Override
+    public void specialAction() {
+        this.decelerate();
+    }
 
 }
