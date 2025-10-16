@@ -1,30 +1,42 @@
 package exo2;
 
-import javax.lang.model.type.NullType;
+public abstract class Pen {
+    protected Cartridge cartridge;
 
-public class Pen {
-    private Cartridge CART;
-
-    public Pen(Cartridge cart){
-        this.CART = cart;
-        cart.setPen(this);
-    }
-
-    public void write(Pen pen, String writing){
-        if (pen.CART.getLevel() > 0) {
-            System.out.println(writing);
-            pen.CART.use();
-        }else {
-            System.out.println("Pen is empty, please change cartridge");
+    public Pen(Cartridge cartridge) {
+        if (cartridge.getPen() != null) {
+            System.out.println("Cartridge already attached to another pen!");
+        } else {
+            this.cartridge = cartridge;
+            cartridge.setPen(this);
         }
     }
 
-    public void changeCartridge(Cartridge cart){
-        if (cart.getPen() == null) {
-            this.CART = cart;
-        }else {
-            System.out.println("The cartridge is already part of a pen");
+
+    public void changeCartridge(Cartridge newCartridge) {
+        if (this.cartridge != null) {
+            this.cartridge.detach(); // remove old link
+        }
+        if (newCartridge.getPen() != null) {
+            System.out.println("This cartridge is already used in another pen!");
+            return;
+        }
+        this.cartridge = newCartridge;
+        newCartridge.setPen(this);
+    }
+
+    public void write(String text) {
+        if (this.cartridge == null) {
+            System.out.println("No cartridge in this pen!");
+            return;
+        }
+        if (this.cartridge.getLevel() >= text.length()) {
+            System.out.println("[Ink color: " + this.cartridge.getColor() + "] " + text);
+            this.cartridge.use(text.length());
+        } else {
+            System.out.println("Level out of bounds: " + this.cartridge.getLevel());
         }
     }
 
 }
+
