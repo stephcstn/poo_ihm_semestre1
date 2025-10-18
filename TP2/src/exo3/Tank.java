@@ -36,7 +36,6 @@ public class Tank extends Vehicle{
 
         if (cible instanceof Car || cible instanceof Skateboard) {
             cible.is_Working = false;
-            track.getVehicleList().remove(cible);
         }
 
         /*switch (cible.getClass().getSimpleName()){

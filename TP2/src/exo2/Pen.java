@@ -4,7 +4,7 @@ public abstract class Pen {
     protected Cartridge cartridge;
 
     public Pen(Cartridge cartridge) {
-        if (cartridge.getPen() != null) {
+        if (cartridge.isAttached()) {
             System.out.println("Cartridge already attached to another pen!");
         } else {
             this.cartridge = cartridge;
@@ -15,9 +15,9 @@ public abstract class Pen {
 
     public void changeCartridge(Cartridge newCartridge) {
         if (this.cartridge != null) {
-            this.cartridge.detach(); // remove old link
+            this.cartridge.detach();
         }
-        if (newCartridge.getPen() != null) {
+        if (newCartridge.isAttached()) {
             System.out.println("This cartridge is already used in another pen!");
             return;
         }
@@ -30,12 +30,10 @@ public abstract class Pen {
             System.out.println("No cartridge in this pen!");
             return;
         }
-        if (this.cartridge.getLevel() >= text.length()) {
+        if (this.cartridge.getLevel() > 0) {
             System.out.println("[Ink color: " + this.cartridge.getColor() + "] " + text);
-            this.cartridge.use(text.length());
-        } else {
-            System.out.println("Level out of bounds: " + this.cartridge.getLevel());
-        }
+            this.cartridge.use();
+        } 
     }
 
 }

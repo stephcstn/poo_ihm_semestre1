@@ -7,13 +7,15 @@ public class Cartridge {
     private int level;
     private Pen pen;
 
-    private final int DEFAULT_LEVEL = 100;
+    private final int DEFAULT_LEVEL = 10;
 
     public Cartridge(Color color) {
         this.color = color;
         this.level = DEFAULT_LEVEL;
         this.pen = null;
     }
+
+    public boolean isEmpty() {return this.level == 0;}
 
     public Color getColor() {
         return this.color;
@@ -31,15 +33,15 @@ public class Cartridge {
         this.pen = pen;
     }
 
+    public void setLevel(int level) {this.level = level;}
+
     public void detach() {
         this.pen = null;
     }
 
-    public void use(int amount) {
-        if (this.level >= amount) {
-            this.level -= amount;
+    public void use() {
+            this.level--;
         }
-    }
 
     public void refill() {
         this.level = 100;
