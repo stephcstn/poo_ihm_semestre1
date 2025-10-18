@@ -8,13 +8,18 @@ public class Car extends Vehicle{
     }
 
     @Override
+    public void decelerate(){
+        super.decelerate();
+    }
+
+    @Override
     public void accelerate(){
         super.accelerate();
         super.accelerate();
     }
 
     @Override
-    public void specialAction() {
+    public void specialAction(Track track) {
         this.decelerate();
     }
 

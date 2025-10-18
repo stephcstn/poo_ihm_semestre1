@@ -16,7 +16,7 @@ public class Tank extends Vehicle{
 
     @Override
     public void specialAction(Track track) {
-        if (this.has_rocket && this.isWorking){
+        if (this.has_rocket && this.is_Working){
 
         int listSize = track.getLengthList();
         if (listSize <= 1) {
@@ -26,10 +26,17 @@ public class Tank extends Vehicle{
         Random rand = new Random();
         Vehicle cible = track.getVehicleList().get(rand.nextInt(listSize));
 
-        System.out.println("The tank attacks " + cible.printType());
+        while (cible.getClass() == this.getClass()) {
+            System.out.println("The tank tried to attack another tank but failed.");
+            cible = track.getVehicleList().get(rand.nextInt(listSize));
+        }
+
+        System.out.print("The tank attacks ");
+        cible.printType();
 
         if (cible instanceof Car || cible instanceof Skateboard) {
-            cible.isWorking = false;
+            cible.is_Working = false;
+            track.getVehicleList().remove(cible);
         }
 
         /*switch (cible.getClass().getSimpleName()){

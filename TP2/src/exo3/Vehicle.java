@@ -1,13 +1,12 @@
 package exo3;
 
-import java.util.List;
 import java.util.ArrayList;
 
 abstract public class Vehicle {
     private int loc;
     private int speed;
     private final int max_Speed;
-    private boolean is_Working;
+    protected boolean is_Working;
 
     private static final int DEFAULT_LOCALISATION = 0;
     private static final int DEFAULT_SPEED = 0;
@@ -18,6 +17,12 @@ abstract public class Vehicle {
         this.speed = DEFAULT_SPEED;
         this.max_Speed = speedMax;
         this.is_Working = DEFAULT_STATE;
+    }
+
+    public void moveForward(){
+        if (this.is_Working){
+            this.loc = this.loc + this.speed;
+        }
     }
 
     public void accelerate(){
@@ -62,16 +67,10 @@ abstract public class Vehicle {
         for (int i = 0; i < this.loc; i++) {
             tab_traj.add("-");
         }
-        System.out.println(tab_traj);
+        System.out.print(tab_traj);
         printType();
     }
 
-
-    public void goForward(){
-        if (this.is_Working){
-            this.loc = this.loc + this.speed;
-        }
-    }
 
     public int getLoc(){
         return this.loc;
@@ -81,6 +80,7 @@ abstract public class Vehicle {
         return this.speed;
     }
 
+    
     public void setLoc(int loca){
         this.loc = loca;
     }
@@ -89,6 +89,6 @@ abstract public class Vehicle {
         this.speed = sp;
     }
 
-    public abstract void specialAction();
+    public abstract void specialAction(Track track);
 
 }

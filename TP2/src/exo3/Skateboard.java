@@ -1,7 +1,5 @@
 package exo3;
 
-import java.util.List;
-
 public class Skateboard extends Vehicle{
 
     private static final int DEFAULT_SPEED_MAX = 4;
@@ -11,7 +9,7 @@ public class Skateboard extends Vehicle{
     }
 
     @Override
-    public abstract void specialAction(){
+    public void specialAction(Track track) {
         this.accelerate();
     }
 }
