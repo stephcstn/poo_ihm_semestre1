@@ -3,9 +3,11 @@ package exo1;
 import java.util.List;
 
 public class Door {
+    //attribut
+    protected boolean isOpen;
 
-    public boolean isOpen;
-    protected final boolean DEFAULT_DOOR = false;
+    //constant
+    protected static final boolean DEFAULT_DOOR = false;
 
 
     public Door() {
@@ -30,7 +32,6 @@ public class Door {
         }
     }
 
-    @Override
     public String toString() {
         return this.getClass().getSimpleName() + " : " + (this.isOpen ? "ouverte" : "fermée");
     }
