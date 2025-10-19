@@ -1,5 +1,3 @@
-package fr.stephane.castan.pen;
-
 import java.awt.Color;
 
 public class Cartridge {

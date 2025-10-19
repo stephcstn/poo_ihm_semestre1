@@ -1,5 +1,3 @@
-package fr.stephane.castan.pen;
-
 public class Pen {
 
     private Cartridge cartridge = null;
