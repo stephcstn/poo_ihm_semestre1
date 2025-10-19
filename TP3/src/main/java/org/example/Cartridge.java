@@ -1,8 +1,10 @@
-import java.awt.Color;
+package org.example;
+
+import java.awt.*;
 
 public class Cartridge {
-
     public final static int DEFAULT_LEVEL = 100;
+
     private int level;
     private Pen pen = null;
     public final Color COLOR;

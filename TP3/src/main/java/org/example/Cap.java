@@ -1,3 +1,5 @@
+package org.example;
+
 public class Cap {
 
     public final String BRAND;
