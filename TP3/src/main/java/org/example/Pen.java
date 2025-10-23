@@ -23,10 +23,17 @@ public class Pen {
 
     public void changeCartridge(Cartridge c) {
         if (this.cartridge != null) {
-            freeCart();
+            this.freeCart();
         }
-        this.cartridge = c;
-        this.cartridge.setPen(this);
+        if (c != null) {
+            if (c.getPen() != null) {
+                c.freePen();
+            }
+            this.cartridge = c;
+            this.cartridge.setPen(this);
+        } else {
+            System.out.println("Cartridge is null");
+        }
     }
 
     public boolean write(String text) {

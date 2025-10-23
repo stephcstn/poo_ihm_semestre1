@@ -10,7 +10,7 @@ public class CapIT {
 
     @Test
     public void testCapNull() {
-        Cap capNull = new Cap(null);
+        Cap capNull = new Cap();
         assertEquals(capNull.BRAND, Cap.DEFAULT_BRAND);
     }
 
