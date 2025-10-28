@@ -1,4 +1,4 @@
-package exo1;
+package org.portes;
 
 public class ClosedDoor extends Door {
 

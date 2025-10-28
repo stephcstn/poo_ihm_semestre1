@@ -1,4 +1,4 @@
-package exo1;
+package org.portes;
 
 public class AutoLockDoor extends Door{
     public boolean isLocked;

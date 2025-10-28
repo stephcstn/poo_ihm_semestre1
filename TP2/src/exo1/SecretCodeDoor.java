@@ -1,4 +1,4 @@
-package exo1;
+package org.portes;
 
 public class SecretCodeDoor extends AutoLockDoor {
     public int secret_code;
