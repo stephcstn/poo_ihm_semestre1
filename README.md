@@ -1,93 +1,155 @@
 # POO-IHM
 
+Collection de travaux pratiques en **programmation orientée objet avec Java**. Le dépôt rassemble plusieurs exercices indépendants qui illustrent la modélisation d'objets, les relations entre classes, le polymorphisme, les collections et les tests automatisés.
 
+> **À propos du périmètre :** malgré « IHM » dans le nom du dépôt, les exemples actuels sont principalement des applications console ; ils ne constituent pas une interface graphique complète.
 
-## Getting started
+## Objectifs pédagogiques
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+- Modéliser des objets du quotidien à l'aide de classes, d'attributs et de méthodes.
+- Mettre en œuvre constructeurs, encapsulation, associations et gestion d'état.
+- Explorer l'héritage, le polymorphisme et la spécialisation de comportements.
+- Manipuler des collections Java (`List`, `Set`) et des types énumérés.
+- Valider les comportements à l'aide de tests unitaires JUnit.
+- Pratiquer la compilation et l'organisation de projets Java avec Maven et IntelliJ IDEA.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+## Architecture du dépôt
 
-## Add your files
+Les travaux sont séparés par sujet et peuvent être étudiés indépendamment.
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
-
+```text
+.
+├── README.md
+└── TP/
+    ├── TP1/             # Vélos, roues, constructeurs et collections
+    ├── TP2/             # Portes, stylos et course de véhicules
+    ├── TP3/             # Modèle de stylo et tests JUnit
+    ├── TP4/             # Robots, batteries et exceptions métier
+    └── Test_portes/     # Exercice sur les portes et tests JUnit
 ```
-cd existing_repo
-git remote add origin https://gitlabens.sfa.univ-poitiers.fr/scastan/poo-ihm.git
-git branch -M main
-git push -uf origin main
-```
 
-## Integrate with your tools
+### Détail des exercices
 
-- [ ] [Set up project integrations](https://gitlabens.sfa.univ-poitiers.fr/scastan/poo-ihm/-/settings/integrations)
+| Dossier | Sujet et notions illustrées | Organisation |
+| --- | --- | --- |
+| `TP/TP1` | Vélos et roues : constructeurs, copie d'objet, accélération/freinage, `List` et `Set`. | Projet Maven ; les sources Maven sont dans `src/main/java/org/bike`. Une première version de l'exercice se trouve aussi dans `src/exo_1`. |
+| `TP/TP2` | `exo1` : portes verrouillées et à code ; `exo2` : stylos, cartouches et variantes spécialisées ; `exo3` : véhicules et course sur une piste. | Trois exercices Java autonomes dans `src/exo1`, `src/exo2` et `src/exo3`, sans configuration Maven. |
+| `TP/TP3` | Stylo, cartouche et capuchon, avec tests unitaires portant notamment sur leurs associations et comportements. | Projet Maven avec sources dans `src/main/java` et tests JUnit 5 dans `src/test/java`. |
+| `TP/TP4` | Robot et batteries : capacité, état, enumération de types et exceptions personnalisées. | Projet Maven configuré pour Java 11. L'exercice est en cours : le `Main` actuel appelle un constructeur et une méthode qui ne correspondent pas à l'API de `Robot`. |
+| `TP/Test_portes` | Portes simples, verrouillage automatique, code secret et tests des états d'ouverture/verrouillage. | Projet Maven avec tests JUnit 5. |
 
-## Collaborate with your team
+## Technologies
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+- **Java** : exercices majoritairement configurés pour Java 25 ; `TP4` cible Java 11.
+- **Maven** : compilation et gestion des dépendances pour `TP1`, `TP3`, `TP4` et `Test_portes`.
+- **JUnit Jupiter 5** : tests unitaires dans `TP3` et `Test_portes`.
+- **IntelliJ IDEA** : fichiers de projet présents pour faciliter l'ouverture des exercices, en particulier `TP2`.
 
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+Les versions Java sont définies individuellement dans les `pom.xml` : utiliser un JDK compatible avec le dossier choisi. Pour les modules configurés en Java 25, un JDK 25 est nécessaire ; `TP4` peut être compilé avec un JDK 11 ou plus récent.
 
 ## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+1. Cloner le dépôt et ouvrir un terminal à sa racine :
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+   ```powershell
+   git clone https://github.com/stephcstn/poo_ihm_semestre1.git
+   cd poo_ihm_semestre1
+   ```
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+   Si le dépôt a été fourni sous forme d'archive, la décompresser puis ouvrir un terminal dans le dossier qui contient `README.md`.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+2. Installer un JDK adapté au travail choisi et vérifier sa disponibilité :
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+   ```powershell
+   java -version
+   javac -version
+   ```
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+3. Pour les dossiers Maven, installer Maven et vérifier la commande :
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+   ```powershell
+   mvn -version
+   ```
 
-## License
-For open source projects, say how it is licensed.
+4. (Facultatif) Ouvrir le dossier dans IntelliJ IDEA. Pour les projets Maven, importer le `pom.xml` correspondant ; pour `TP2`, ouvrir le dossier `TP/TP2` et exécuter la classe `Main` du package choisi.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+## Compiler, tester et exécuter
+
+Les commandes ci-dessous sont écrites pour **PowerShell**. Chaque dossier constitue un projet distinct ; choisir les commandes du module à étudier et exécuter le bloc correspondant depuis la racine du dépôt.
+
+### TP1 — vélos et roues
+
+```powershell
+Set-Location .\TP\TP1
+mvn clean package
+java -cp target\classes org.bike.Main
+```
+
+La version alternative située dans `src/exo_1` n'appartient pas au répertoire source Maven standard ; elle peut être lancée depuis IntelliJ en tant qu'exercice distinct.
+
+### TP2 — portes, stylos ou véhicules
+
+Compiler les trois packages depuis `TP/TP2` :
+
+```powershell
+Set-Location .\TP\TP2
+New-Item -ItemType Directory -Force .\out | Out-Null
+$sources = Get-ChildItem .\src -Recurse -Filter *.java | ForEach-Object { $_.FullName }
+javac -d .\out $sources
+```
+
+Exécuter ensuite l'exercice souhaité :
+
+```powershell
+java -cp .\out exo1.Main
+java -cp .\out exo2.Main
+java -cp .\out exo3.Main
+```
+
+### TP3 — stylo et tests
+
+```powershell
+Set-Location .\TP\TP3
+mvn clean package
+mvn -Dtest=CapIT,CartridgeIT,PenIT test
+```
+
+Les classes de test sont nommées `*IT` ; la commande ciblée les sélectionne explicitement. La classe `org.example.Main` affiche actuellement un message de démonstration.
+
+### TP4 — robot et batteries
+
+```powershell
+Set-Location .\TP\TP4
+mvn clean package
+```
+
+La compilation de ce module nécessite d'abord de remettre en cohérence `Main` avec l'API de `Robot` : `Main` utilise actuellement `new Robot("real_steel")` et `to_string()`, alors que `Robot` expose un constructeur à quatre paramètres et redéfinit `toString()`. Aucun lancement exécutable n'est donc documenté pour ce module dans son état actuel.
+
+### Test_portes — tests des portes
+
+```powershell
+Set-Location .\TP\Test_portes
+mvn clean test
+```
+
+## Compétences mises en évidence
+
+Ce dépôt permet de présenter à un recruteur des bases concrètes en :
+
+- **Conception orientée objet** : classes cohérentes autour de domaines variés, constructeurs par défaut et paramétrés, copie d'objets et encapsulation.
+- **Relations entre objets** : association entre un stylo et sa cartouche, composition de véhicules sur une piste, et gestion des états d'une porte.
+- **Héritage et polymorphisme** : variantes de portes, stylos et véhicules substituables via des types communs.
+- **Collections et API Java** : listes, ensembles, énumérations, ainsi que parcours et gestion d'objets.
+- **Qualité et validation** : tests JUnit pour les transitions d'état, les associations, les limites de capacité et les comportements attendus.
+- **Outillage de développement** : projets Maven, compilation Java et organisation de modules dans IntelliJ IDEA.
+
+## Limites et pistes d'amélioration
+
+- Les exercices restent indépendants et n'ont pas encore de configuration Maven commune.
+- `TP4` demande une mise à jour de son point d'entrée avant de pouvoir être compilé.
+- Les tests de `TP3` sont nommés `*IT` et sont lancés explicitement dans la commande ci-dessus.
+- Le dépôt ne contient pas encore de véritable interface graphique, de pipeline d'intégration continue ou de documentation de contribution.
+
+## Licence
+
+Aucune licence n'est déclarée dans le dépôt. Demander l'autorisation du propriétaire avant toute réutilisation ou redistribution.
